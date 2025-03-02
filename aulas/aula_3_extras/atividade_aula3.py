@@ -20,7 +20,7 @@ class Downloader:
 
 class IBGE(Downloader):
     def __init__(self, destination_folder):
-        server_url_format = "https://geoftp.ibge.gov.br/cartas_e_mapas/folhas_topograficas/vetoriais/escala_1000mil/shapefile/{name}.zip"
+        server_url_format = "https://geoftp.ibge.gov.br/cartas_e_mapas/folhas_topograficas/vetoriais/escala_1000mil/shapefile/{name}"
         super().__init__(server_url_format, destination_folder)
         
     def download_data(self, file_name):
@@ -35,6 +35,6 @@ if __name__ == "__main__":
     ibge_downloader = IBGE(destination_folder)
 
     # Baixando um arquivo específico
-    file_name = "g04_na19"  # Substitua pelo nome do arquivo real
+    file_name = "g04_na19.zip"  # Substitua pelo nome do arquivo real
     ibge_downloader.download_data(file_name)
  
